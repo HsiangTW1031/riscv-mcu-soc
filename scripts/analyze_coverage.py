@@ -53,11 +53,19 @@ def discover_file_to_block():
     mapping = {}
     for rtl_dir in sorted(ROOT.glob("blocks/*/rtl")):
         block = rtl_dir.parent.name
-        for f in list(rtl_dir.glob("*.v")) + list(rtl_dir.glob("*.vh")):
+        for f in list(rtl_dir.glob("*.v")) + list(rtl_dir.glob("*.vh")) + list(rtl_dir.glob("*.sv")) + list(rtl_dir.glob("*.svh")):
             if f.is_symlink():
                 continue
             mapping[f.name] = block
     mapping.update(cfg.VENDORED_FILES)
+    # A project's own file can end up physically colocated inside a
+    # vendored IP's tree (e.g. a hand-written bridge sitting next to
+    # the vendored files it connects to) -- its canonical copy then
+    # lives outside blocks/*/rtl/ entirely, so the symlink-skip logic
+    # above never attributes it to a block, and it silently drops out
+    # of every coverage/lint table instead of being misattributed.
+    # coverage_config.OWN_RTL_ELSEWHERE overrides exactly that case.
+    mapping.update(getattr(cfg, "OWN_RTL_ELSEWHERE", {}))
     return mapping
 
 
@@ -199,7 +207,7 @@ def per_file_line_coverage():
     own row would double-count/misattribute coverage that's really the
     including module's."""
     results = []
-    for path in sorted(ANNOTATED.glob("*.v")):
+    for path in sorted(list(ANNOTATED.glob("*.v")) + list(ANNOTATED.glob("*.sv"))):
         if path.name not in FILE_TO_BLOCK:
             continue
         covered = 0
