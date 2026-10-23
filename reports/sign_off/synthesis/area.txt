@@ -79,6 +79,6 @@
      of which used for sequential elements: 47968.046000 (35.14%)
 
 Warnings: 2 unique messages, 2 total
-End of script. Logfile hash: 45baba446a, time: 24.43s, user: 8.90s, system: 0.28s, MEM: 260.97 MB peak
+End of script. Logfile hash: b66a6e860f, time: 24.10s, user: 8.80s, system: 0.20s, MEM: 262.12 MB peak
 Yosys 0.67+post (git sha1 b8e7da6f40ae8f552c116bf6c359b07c6533e159, Release, AppleClang clang++ 21.0.0.21000099)
-Time spent: 67% 2x abc (16 sec), 6% 65x opt_expr (1 sec), ...
+Time spent: 68% 2x abc (16 sec), 6% 65x opt_expr (1 sec), ...

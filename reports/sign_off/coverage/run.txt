@@ -31,7 +31,7 @@ Coverage Summary:
   fsm_arc   : 0.0% (    0/    0)
 Annotation Summary:
   lines with all attached points covered : 35.00%  (1293/3674)
-See lines with '%00' in /Users/shunghsiangwu/AI_agent/Levi-agent/projects/RISCV_SOC/reports/sign_off/coverage/annotated
-Merged coverage data: /Users/shunghsiangwu/AI_agent/Levi-agent/projects/RISCV_SOC/reports/sign_off/coverage/merged.dat
-LCOV info:            /Users/shunghsiangwu/AI_agent/Levi-agent/projects/RISCV_SOC/reports/sign_off/coverage/coverage.info
-Annotated source:      /Users/shunghsiangwu/AI_agent/Levi-agent/projects/RISCV_SOC/reports/sign_off/coverage/annotated/
+See lines with '%00' in /Users/shunghsiangwu/AI_agent/Levi_agent/projects/riscv-mcu-soc/reports/sign_off/coverage/annotated
+Merged coverage data: /Users/shunghsiangwu/AI_agent/Levi_agent/projects/riscv-mcu-soc/reports/sign_off/coverage/merged.dat
+LCOV info:            /Users/shunghsiangwu/AI_agent/Levi_agent/projects/riscv-mcu-soc/reports/sign_off/coverage/coverage.info
+Annotated source:      /Users/shunghsiangwu/AI_agent/Levi_agent/projects/riscv-mcu-soc/reports/sign_off/coverage/annotated/
